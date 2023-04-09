@@ -8,7 +8,7 @@ class ContactService {
   // Get Contact
   Future<List<ListContactResponse>> getContact() async {
     final response = await Dio().get(
-      'https://my-json-server.typicode.com/hadihammurabi/flutter-webservice/contacts',
+      'https://my-json-server.typicode.com/hadihammurabi/flutter-webservice/contacts/2',
     );
 
     List<ListContactResponse> contacts = (response.data as List)
@@ -31,7 +31,7 @@ class ContactService {
     String idContact,
   ) async {
     final response = await Dio().get(
-      'https://my-json-server.typicode.com/hadihammurabi/flutter-webservice/contacts/$idContact',
+      'https://my-json-server.typicode.com/hadihammurabi/flutter-webservice/contacts/2$idContact',
     );
 
     return Contact.fromJson(response.data);
@@ -45,7 +45,7 @@ class ContactService {
   }) async {
     try {
       final response = await Dio().post(
-        "https://my-json-server.typicode.com/hadihammurabi/flutter-webservice/contacts",
+        "https://my-json-server.typicode.com/hadihammurabi/flutter-webservice/contacts/2",
         data: {
           "name": name,
           "phone": phone,
@@ -93,6 +93,8 @@ class ContactService {
     }
   }
 
+  
+
   // Delete Contanct
   Future<void> deleteContact(
     BuildContext context, {
@@ -101,7 +103,7 @@ class ContactService {
   }) async {
     try {
       final response = await Dio().delete(
-        "https://my-json-server.typicode.com/hadihammurabi/flutter-webservice/contacts/$idContact",
+        "https://my-json-server.typicode.com/hadihammurabi/flutter-webservice/contacts/2$idContact",
       );
 
       if (response.statusCode == 200) {
@@ -153,7 +155,7 @@ class ContactService {
   }) async {
     try {
       final response = await Dio().put(
-        "https://my-json-server.typicode.com/hadihammurabi/flutter-webservice/contacts/$idContact",
+        "https://my-json-server.typicode.com/hadihammurabi/flutter-webservice/contacts/2$idContact",
         data: {
           "name": name,
           "phone": phone,
