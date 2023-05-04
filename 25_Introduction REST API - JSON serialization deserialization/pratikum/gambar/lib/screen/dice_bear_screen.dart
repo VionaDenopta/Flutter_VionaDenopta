@@ -44,14 +44,14 @@ class _DiceBearScreenState extends State<DiceBearScreen> {
                     height: 100,
                     width: 100,
                   )
-                : const Text("Image Belum Generate"),
+                : const Text("Gambar Belum Ada"),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: TextFieldCustome(
                 controller: _nameController,
                 isValidTextField: true,
                 errorMessage: '',
-                hintText: 'Cari Image',
+                hintText: 'Cari Gambar',
               ),
             ),
             ButtonCustome(
@@ -64,7 +64,7 @@ class _DiceBearScreenState extends State<DiceBearScreen> {
 
                 setState(() {});
               },
-              title: 'Generate Gambar',
+              title: 'Sumbit',
             ),
           ],
         ),
